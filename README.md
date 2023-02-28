@@ -1,1 +1,1 @@
-Repositorium for exercises from website leetCode.
+Repository for exercises from website leetCode.
