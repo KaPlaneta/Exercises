@@ -4,9 +4,9 @@
 
 var isIsomorphic = function (s, t) {
   const dict = {};
+  const dict2 = {};
 
   if (s.length !== t.length) {
-    //porownuje
     return false;
   }
 
@@ -20,7 +20,16 @@ var isIsomorphic = function (s, t) {
         return false;
       }
     } else {
-      dict[letter1] = letter2; //przypisuuje
+      dict[letter1] = letter2;
+    }
+    if (dict2.hasOwnProperty(letter2)) {
+      if (dict2[letter2] === letter1) {
+        continue;
+      } else {
+        return false;
+      }
+    } else {
+      dict2[letter2] = letter1;
     }
   }
   return true;
